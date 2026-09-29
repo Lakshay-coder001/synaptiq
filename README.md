@@ -10,10 +10,8 @@ Synaptiq is a frontend-only machine learning experimentation platform built usin
 * Implement CRUD operations for managing experiments.
 * Perform lightweight neural network training using JavaScript.
 * Use Web Workers for background training and maintain a responsive UI.
-* Demonstrate JavaScript concepts such as Promises, async/await, Fetch API, callbacks, generators, Map, Set, and array methods.
-* Demonstrate browser concepts including the event loop, microtasks, macrotasks, rendering, Web Storage, Cookies, and IndexedDB.
+* Use IndexedDB to store model parameters and to update these between training.
 * Provide real-time training metrics such as loss, accuracy, epochs, and training status.
-* Create a responsive interface that works on desktop, tablet, and mobile devices.
 
 ## Specifications
 
@@ -31,12 +29,12 @@ Synaptiq is a frontend-only machine learning experimentation platform built usin
 * Browser-based neural network training.
 * Real-time training progress and metrics.
 * Training history and experiment comparison.
-* Dataset loading and basic CSV support.
-* Responsive dashboard design..
+* Live graph using SVG and js.
 
 ### Might add these features
 
 * Local data persistence using IndexedDB.
+* Dataset loading and basic CSV support.
 
 
 ## Design
