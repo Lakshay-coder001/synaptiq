@@ -1,0 +1,80 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-primary: hsl(225, 25%, 8%);
+  --bg-secondary: hsl(225, 20%, 12%);
+  --bg-tertiary: hsl(225, 18%, 16%);
+  --bg-hover: hsl(225, 18%, 20%);
+  --bg-input: hsl(225, 20%, 14%);
+  --border-color: hsl(225, 15%, 22%);
+  --border-light: hsl(225, 12%, 28%);
+  --text-primary: hsl(220, 20%, 92%);
+  --text-secondary: hsl(220, 15%, 65%);
+  --text-muted: hsl(220, 10%, 45%);
+  --accent: hsl(210, 100%, 60%);
+  --accent-hover: hsl(210, 100%, 52%);
+  --accent-subtle: hsla(210, 100%, 60%, 0.12);
+  --success: hsl(145, 65%, 48%);
+  --success-subtle: hsla(145, 65%, 48%, 0.12);
+  --warning: hsl(38, 95%, 55%);
+  --warning-subtle: hsla(38, 95%, 55%, 0.12);
+  --error: hsl(0, 75%, 58%);
+  --error-subtle: hsla(0, 75%, 58%, 0.12);
+  --info: hsl(195, 85%, 55%);
+  --info-subtle: hsla(195, 85%, 55%, 0.12);
+  --purple: hsl(265, 70%, 62%);
+  --purple-subtle: hsla(265, 70%, 62%, 0.12);
+  
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 68px;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout{
+    display: flex;
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+.sidebar{
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width var(--transition-normal);
+    z-index: 100;
+}
