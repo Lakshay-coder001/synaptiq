@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components.css">
     <title>Synaptiq</title>
 </head>
 <body>
@@ -22,17 +23,115 @@
                 </button>
             </div>
             <ul class="sidebar-nav">
-                <li class="nav-item nav-item--active"><a href="index.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Dashboard</a></li>
-                <li class="nav-item"><a href="experiments.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Experiment</a></li>
-                <li class="nav-item"><a href="training.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Training</a></li>
-                <li class="nav-item"><a href="history.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>History</a></li>
-                <li class="nav-item"><a href="dataset.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Dataset</a></li>
-                <li class="nav-item"><a href="compare.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Compare</a></li>
+                <li class="nav-item nav-item--active">
+                    <a href="index.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="experiments.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-flask"></i></span>Experiment</a>
+                </li>
+                <li class="nav-item">
+                    <a href="training.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-gears"></i></span>Training</a>
+                </li>
+                <li class="nav-item">
+                    <a href="history.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-clock-rotate-left"></i></span>History</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dataset.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-folder"></i></span>Dataset</a>
+                </li>
+                <li class="nav-item"><a href="compare.html" class="nav-link"><span class="nav-icon">
+                    <i class="fa-solid fa-square-poll-horizontal"></i></span>Compare</a>
+                </li>
             </ul>
             <div class="sidebar-footer">
                 <span class="sidebar-version">v1.0.0</span>
             </div>
         </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-left">
+                    <button class="sidebar-toggle-mobile" id="mobileSidebarToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+                    <h2 class="page-title">Dashboard</h2>
+                </div>
+                <div class="page-actions"></div>
+            </header>
+            <div class="page-body">
+                <div class="welcome-banner card">
+                    <div class="card-body">
+                        <h3>Welcome to Syanptiq</h3>
+                        <p class="text-muted">Browser-based ML experimentation platform</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stats grid-4 mb-4">
+                    <div class="stat-card stat-card--accent">
+                        <div class="stat-card__icon"><i class="fa-solid fa-flask"></i></div>
+                            <div>
+                                <div class="stat-card__value" id="statTotalExperiments">-</div>
+                                <div class="stat-card__label">Total Experiments</div>
+                            </div>
+                    </div>
+                    
+
+                    <div class="stat-card stat-card--warning">
+                        <div class="stat-card__icon"><i class="fa-solid fa-spinner"></i></div>
+                            <div>
+                                <div class="stat-card__value" id="statRunningExperiments">-</div>
+                                <div class="stat-card__label">Running Experiments</div>
+                            </div>
+                    </div>
+
+                    <div class="stat-card stat-card--success">
+                        <div class="stat-card__icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <div class="stat-card__value" id="statCompletedRuns">-</div>
+                                <div class="stat-card__label">Completed Runs</div>
+                            </div>
+                    </div>
+
+                    <div class="stat-card stat-card--info">
+                        <div class="stat-card__icon"><i class="fa-solid fa-ranking-star"></i></div>
+                            <div>
+                                <div class="stat-card__value" id="statBestAccuracy">-</div>
+                                <div class="stat-card__label">Best Accuracy</div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid grid-2 mb-4">
+                    <div class="card recent-section">
+                            <div class="card-header flex-between">
+                                <h3>Recent Experiments</h3>
+                                <a href="experiments.html" class="btn btn-sm btn-ghost">View All</a>
+                                </div>
+                                    <div class="card-body">
+                                    <div id="recentExperiments"></div>
+                                    </div>
+                                </div>
+                                    <div class="card recent-section">
+                                        <div class="card-header flex-between">
+                                        <h3>Recent Runs</h3>
+                                        <a href="history.html" class="btn btn-sm btn-ghost">View All</a>
+                                    </div>
+                                    <div class="card-body"></div>
+                                <div id="recentRuns"></div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card quick-actions">
+                    <div class="card-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="card-body flex gap-2">
+                        <a href="experiment.html?action=create" class="btn btn-primary"><i class="fa-solid fa-plus"></i> New Experiment</a>
+                        <a href="experiment.html" class="btn btn-secondary">View Experiments</a>
+                        <a href="history.html" class="btn btn-secondary">View History</a>
+                        <a href="dataset.html" class="btn btn-secondary">Manage Datasets</a>
+                    </div>
+                </div>
+            </div>
+        </main>
 
     </div>
 </body>
