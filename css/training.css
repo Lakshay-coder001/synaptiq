@@ -1,0 +1,119 @@
+.training-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.training-header-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.training-info-block {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.training-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.control-btn {
+  padding: 0.6rem 1.25rem;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.training-progress,
+.training-progress-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.epoch-counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+  gap: 1.5rem;
+}
+
+.epoch-counter-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.epoch-counter-label,
+.training-timer-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.training-timer-label {
+  text-align: right;
+}
+
+.epoch-counter {
+  font-size: 28px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.training-timer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  min-width: 0;
+}
+
+.training-timer {
+  font-size: 20px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.1;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.training-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.training-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.training-log {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  max-height: 320px;
+  overflow-y: auto;
+}

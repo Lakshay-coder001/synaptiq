@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Synaptiq">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/training.css">
+    <title>Synaptiq</title>
+</head>
+<body>
+    <div class="app-layout">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><span class="logo-icon"></span>
+                    Synaptiq
+                </div>
+                <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+                    <span class="toggle-icon"><i class="fa-solid fa-bars"></i></span>
+                </button>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-item ">
+                    <a href="index.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="experiment.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-flask"></i></span>Experiment</a>
+                </li>
+                <li class="nav-item nav-item--active">
+                    <a href="training.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-gears"></i></span>Training</a>
+                </li>
+                <li class="nav-item">
+                    <a href="history.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-clock-rotate-left"></i></span>History</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dataset.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-folder"></i></span>Dataset</a>
+                </li>
+                <li class="nav-item"><a href="compare.html" class="nav-link"><span class="nav-icon">
+                    <i class="fa-solid fa-square-poll-horizontal"></i></span>Compare</a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <span class="sidebar-version">v1.0.0</span>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-left">
+                    <button class="sidebar-toggle-mobile" id="mobileSidebarToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+                    <h2 class="page-title">Training Lab</h2>
+                </div>
+                <div class="page-actions">
+                    <select id="experimentSelect" class="form-select" style="min-width: 220px;">
+                        <option value="">Select an Experiment</option>
+                    </select>
+                </div>
+            </header>
+            <div class="page-body">
+                <div class="training-layout">
+                    <div class="training-header-card">
+                        <div class="training-info-block">
+                            <span id="trainingStatusDisplay" class="status-chip status-chip--ready">Ready</span>
+                            <div id="experimentInfo" class="hidden">
+                                <h3 id="infoName" style="margin: 0 0 0.25rem 0; font-size: 1.1rem;">Experiment Name</h3>
+                                <span id="infoDataset" style="color: var(--text-secondary); font-size: 0.9rem;">Dataset: -</span>
+                            </div>
+                        </div>
+                        <div class="training-controls">
+                            <button id="btnStart" class="btn btn-success control-btn" disabled><i class="fa-solid fa-play"></i> Start</button>
+                            <button id="btnPause" class="btn btn-secondary control-btn" disabled><i class="fa-solid fa-pause"></i> Pause</button>
+                            <button id="btnResume" class="btn btn-primary control-btn hidden"><i class="fa-solid fa-play"></i> Resume</button>
+                            <button id="btnStop" class="btn btn-danger control-btn" disabled><i class="fa-solid fa-stop"></i> Stop</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="infoConfigWrapper" class="card hidden">
+                    <div class="card-body">
+                        <div id="infoConfig" class="mono" style="font-size: 0.85rem; color: var(--text-secondary);"></div>
+                    </div>
+                </div>
+
+                <div class="training-progress-card card">
+                    <div class="epoch-counter-row">
+                        <div class="epoch-counter-block">
+                            <span class="epoch-counter-label">Epoch</span>
+                            <div class="epoch-counter" id="epochDisplay">0 / 0</div>
+                        </div>
+                        <div class="training-timer-block">
+                            <span class="training-timer-label">Elapsed Time</span>
+                            <div class="training-timer" id="trainingTime">00:00.0</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar" id="progressBarContainer">
+                        <div class="progress-bar__fill" id="progressBarFill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="training-metrics">
+                    <div class="metric-item">
+                        <span class="metric-label">Training Loss</span>
+                        <div class="metric-value" id="metricLoss">0.0000</div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Training Accuracy</span>
+                        <div class="metric-value" id="metricAccuracy">0.0%</div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Validation Loss</span>
+                        <div class="metric-value" id="metricValLoss">0.0000</div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Validation Accuracy</span>
+                        <div class="metric-value" id="metricValAccuracy">0.0%</div>
+                    </div>
+                </div>
+
+                <div class="training-charts">
+                    <div class="chart-container card">
+                        <h4 class="chart-title">Loss Curve Over Epochs</h4>
+                        <div class="chart-canvas-wrapper">
+                            <canvas id="lossChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container card">
+                        <h4 class="chart-title">Accuracy Curve Over Epochs</h4>
+                        <div class="chart-canvas-wrapper">
+                            <canvas id="accuracyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="training-log card">
+                    <div class="card-header">
+                        <h4 class="card-title">Live Epoch Log</h4>
+                    </div>
+                    <div class="card-body" style="padding: 0;">
+                        <div id="epochLog" class="table-container" style="border: none;">
+                            <table class="data-table">
+                            <thead>
+                                <tr>
+                                <th>Epoch</th>
+                                <th>Elapsed Time</th>
+                                <th>Train Loss</th>
+                                <th>Train Acc</th>
+                                <th>Val Loss</th>
+                                <th>Val Acc</th>
+                                </tr>
+                            </thead>
+                            <tbody id="epochLogBody"> <!--will populate with js-->
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="toastContainer" class="toast-container"></div>
+    <div id="modalContainer"></div>
+</body>
+</html>

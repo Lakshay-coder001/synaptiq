@@ -27,7 +27,7 @@
                     <a href="index.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="experiments.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-flask"></i></span>Experiment</a>
+                    <a href="experiment.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-flask"></i></span>Experiment</a>
                 </li>
                 <li class="nav-item">
                     <a href="training.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-gears"></i></span>Training</a>
@@ -97,26 +97,25 @@
                             </div>
                     </div>
                 </div>
-
                 <div class="dashboard-grid grid-2 mb-4">
-                    <div class="card recent-section">
-                            <div class="card-header flex-between">
-                                <h3>Recent Experiments</h3>
-                                <a href="experiments.html" class="btn btn-sm btn-ghost">View All</a>
-                                </div>
-                                    <div class="card-body">
-                                    <div id="recentExperiments"></div>
-                                    </div>
-                                </div>
-                                    <div class="card recent-section">
-                                        <div class="card-header flex-between">
-                                        <h3>Recent Runs</h3>
-                                        <a href="history.html" class="btn btn-sm btn-ghost">View All</a>
-                                    </div>
-                                    <div class="card-body"></div>
-                                <div id="recentRuns"></div>
-                            </div>
+                <div class="card recent-section">
+                    <div class="card-header flex-between">
+                    <h3>Recent Experiments</h3>
+                    <a href="experiment.html" class="btn btn-sm btn-ghost">View All</a>
                     </div>
+                    <div class="card-body">
+                    <div id="recentExperiments"></div>
+                    </div>
+                </div>
+                <div class="card recent-section">
+                    <div class="card-header flex-between">
+                    <h3>Recent Runs</h3>
+                    <a href="history.html" class="btn btn-sm btn-ghost">View All</a>
+                    </div>
+                    <div class="card-body">
+                    <div id="recentRuns"></div>
+                    </div>
+                </div>
                 </div>
 
                 <div class="card quick-actions">
@@ -132,7 +131,8 @@
                 </div>
             </div>
         </main>
-
     </div>
+    <div id="toastContainer" class="toast-container"></div>
+    <div id="modalContainer"></div>
 </body>
 </html>
