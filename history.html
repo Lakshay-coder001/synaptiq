@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Synaptiq">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/history.css">
+    <title>Synaptiq</title>
+</head>
+<body>
+    <div class="app-layout">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><span class="logo-icon"></span>
+                    Synaptiq
+                </div>
+                <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+                    <span class="toggle-icon"><i class="fa-solid fa-bars"></i></span>
+                </button>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-item ">
+                    <a href="index.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-table-cells"></i></span>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="experiment.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-flask"></i></span>Experiment</a>
+                </li>
+                <li class="nav-item">
+                    <a href="training.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-gears"></i></span>Training</a>
+                </li>
+                <li class="nav-item nav-item--active">
+                    <a href="history.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-clock-rotate-left"></i></span>History</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dataset.html" class="nav-link"><span class="nav-icon"><i class="fa-solid fa-folder"></i></span>Dataset</a>
+                </li>
+                <li class="nav-item"><a href="compare.html" class="nav-link"><span class="nav-icon">
+                    <i class="fa-solid fa-square-poll-horizontal"></i></span>Compare</a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <span class="sidebar-version">v1.0.0</span>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-left">
+                    <button class="sidebar-toggle-mobile" id="mobileSidebarToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+                    <h2 class="page-title">History</h2>
+                </div>
+                <div class="page-actions">
+                    <!-- <button class="btn btn-primary" id="btnNewExperiment"><i class="fa-solid fa-plus"></i> New Experiment</button> -->
+                </div>
+            </header>
+            <div class="page-body">
+                <div class="card history-filters">
+                    <div class="card-body" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label class="form-label" for="filterExperiment">Experiment</label>
+                            <select id="filterExperiment" class="form-select">
+                                <option value="all">All Experiments</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label class="form-label" for="filterRunStatus">Status</label>
+                            <select id="filterRunStatus" class="form-select">
+                                <option value="all">All</option>
+                                <option value="running">Running</option>
+                                <option value="paused">Paused</option>
+                                <option value="completed">Completed</option>
+                                <option value="stopped">Stopped</option>
+                                <option value="error">Error</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label class="form-label" for="sortRuns">Sort By</label>
+                            <select id="sortRuns" class="form-select">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="accuracy">Best Accuracy</option>
+                                <option value="loss">Lowest Loss</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div id="historyContainer" class="table-container">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="toastContainer" class="toast-container"></div>
+    <div id="modalContainer"></div>
+</body>
+</html>
