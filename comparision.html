@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="css/comparision.css">
     <title>Synaptiq</title>
 </head>
 <body>
@@ -55,11 +55,53 @@
                     <h2 class="page-title">Compare Runs</h2>
                 </div>
                 <div class="page-actions">
-                    <button ></button>
+                    <button id="btnCompare" class="btn btn-primary" disabled>Compare</button>
                 </div>
             </header>
             <div class="page-body">
+                <div class="card comparison-selector">
+                    <div class="card-header">
+                        <h3 class="card-title">Select Training Runs to Compare</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="runSelector" class="table-container">
+                        <!-- js will render this //need to complete this -->
+                        </div>
+                    </div>
+                </div>
 
+                <div id="comparisonResults" class="hidden">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Metrics Comparison</h3>
+                        </div>
+                        <div class="card-body table-container">
+                            <table id="comparisonTable" class="data-table comparison-table">
+                                <!-- same here -->
+                            </table>
+                        </div>
+                    </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Charts Comparison</h3>
+                    </div>
+                    <div class="card-body comparison-charts" id="comparisonCharts">
+                        <div style="flex: 1; min-width: 300px;">
+                            <h4 style="margin-bottom: 1rem; font-size: 0.875rem; font-weight: 500;">Loss Comparison</h4>
+                            <div class="chart-canvas-wrapper">
+                                <canvas id="lossCompareChart"></canvas>
+                            </div>
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h4 style="margin-bottom: 1rem; font-size: 0.875rem; font-weight: 500;">Accuracy Comparison</h4>
+                            <div class="chart-canvas-wrapper">
+                                <canvas id="accCompareChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </main>
     </div>

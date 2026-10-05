@@ -513,6 +513,45 @@
   transition: width 0.3s ease;
 }
 
+.nav-icon i {
+    transition: transform 0.2s ease;
+}
+
+.nav-link:hover .nav-icon i {
+    transform: scale(1.15);
+}
+
+.sidebar-nav .nav-link {
+    position: relative;
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease;
+}
+
+.sidebar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    border-radius: 3px;
+    transform: translateY(-50%);
+    transition: height 0.25s ease;
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: var(--bg-hover);
+    box-shadow: 0 0 12px var(--accent-subtle);
+    color: var(--text-primary);
+}
+
+.sidebar-nav .nav-link:hover::before {
+    height: 60%;
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
