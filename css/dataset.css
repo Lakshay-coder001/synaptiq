@@ -1,0 +1,41 @@
+.datasets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.dataset-card {
+  position: relative;
+}
+
+.csv-import-area {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all var(--transition-fast);
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+}
+
+.csv-import-area:hover {
+  border-color: var(--accent);
+  background-color: var(--bg-hover);
+}
+
+.dataset-preview {
+  margin-top: 1.5rem;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.dataset-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.file-input {
+  display: none;
+}
