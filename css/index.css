@@ -50,6 +50,7 @@
 }
 
 html, body {
+  user-select: none;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-primary);
@@ -262,6 +263,39 @@ html{
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.recent-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-section .card-header {
+  padding: 1.25rem;
+}
+
+.recent-section .data-table th,
+.recent-section .data-table td {
+  padding: 1rem 1.25rem;
+}
+
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .hidden {
