@@ -1,0 +1,22 @@
+{
+  "appName": "Synaptiq",
+  "version": "1.0.0",
+  "defaults": {
+    "learningRate": 0.01,
+    "epochs": 50,
+    "batchSize": 4,
+    "hiddenLayers": 2,
+    "neuronsPerLayer": 8,
+    "activationFunction": "sigmoid"
+  },
+  "limits": {
+    "maxEpochs": 1000,
+    "maxLayers": 5,
+    "maxNeurons": 64,
+    "minLearningRate": 0.0001,
+    "maxLearningRate": 1.0,
+    "maxBatchSize": 128
+  },
+  "activationFunctions": ["sigmoid", "tanh", "relu"],
+  "modelTypes": ["feedforward"]
+}

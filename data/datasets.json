@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "datasets": [
+    {
+      "id": "xor",
+      "name": "XOR Gate",
+      "description": "Classic XOR logical operation. A fundamental test for neural networks that requires non-linear decision boundaries.",
+      "type": "classification",
+      "samples": 4,
+      "features": 2,
+      "classes": 2,
+      "featureNames": ["Input A", "Input B"],
+      "classNames": ["0", "1"],
+      "builtin": true,
+      "data": [
+        { "input": [0, 0], "output": [0] },
+        { "input": [0, 1], "output": [1] },
+        { "input": [1, 0], "output": [1] },
+        { "input": [1, 1], "output": [0] }
+      ]
+    },
+    {
+      "id": "iris",
+      "name": "Iris Classification",
+      "description": "Iris dataset with 150 samples of 3 iris species classified by 4 physical measurements.",
+      "type": "classification",
+      "samples": 150,
+      "features": 4,
+      "classes": 3,
+      "featureNames": ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width"],
+      "classNames": ["Setosa", "Versicolor", "Virginica"],
+      "builtin": true,
+      "dataFile": "iris.json"
+    }
+  ]
+}
