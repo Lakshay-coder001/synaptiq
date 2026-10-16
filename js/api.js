@@ -2,7 +2,7 @@
   window.Synaptiq = window.Synaptiq || {};
 
   let _cachedDatasets = null;
-  let _cachedConfig = null;
+  let _cachedConfig =null;
   let _cachedIrisData = null;
 
   
